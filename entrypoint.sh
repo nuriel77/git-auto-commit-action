@@ -2,9 +2,12 @@
 
 set -eu
 
+echo "INPUT_DISABLE_GLOBBING: $INPUT_DISABLE_GLOBBING"
 if "$INPUT_DISABLE_GLOBBING"; then
-    echo "INPUT_DISABLE_GLOBBING: $INPUT_DISABLE_GLOBBING"
+    echo "Set no glob!"
     set -o noglob;
+else
+    echo "glob on"
 fi
 
 _main() {
