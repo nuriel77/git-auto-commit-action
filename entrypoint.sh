@@ -3,6 +3,7 @@
 set -eu
 
 if "$INPUT_DISABLE_GLOBBING"; then
+    echo "INPUT_DISABLE_GLOBBING: $INPUT_DISABLE_GLOBBING"
     set -o noglob;
 fi
 
@@ -68,6 +69,7 @@ _add_files() {
 
     # shellcheck disable=SC2086
     git add ${INPUT_ADD_OPTIONS} ${INPUT_FILE_PATTERN};
+    git status
 }
 
 _local_commit() {
